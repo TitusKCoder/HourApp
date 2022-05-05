@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import 
+
 import Header from './Header';
 import Footer from './Footer';
-import Profile from './pages/Profile'
+import Profile from './pages/Profile'; 
 import About from './pages/About';
 import Home from './pages/Home';
 import Connect from './pages/Connect';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -18,6 +22,12 @@ export default function PortfolioContainer() {
     }
     if( currentPage === 'Connect') {
       return <Connect />;
+    }
+    if( currentPage === 'Login') {
+      return <Login />;
+    }
+    if(currentPage === 'Signup') {
+      return <Signup />;
     }
     return <About />;
   };
