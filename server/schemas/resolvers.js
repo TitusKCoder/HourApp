@@ -1,4 +1,5 @@
-const { Profile } = require('../models');
+const { Profile, Skills } = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -9,12 +10,32 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
+
+    skills(parent, args, context, info) {
+      const { name } = args;
+      return context.db.skills
+        .filter((skill) => skill.name == name)
+    }
+    // getSkills: async () => {
+    //   return Skills.find();
+    // },
+    // searchSkills: async (parent, args) => {
+    //   return Skills.find(args.search)
+    // },
   },
 
   Mutation: {
-    addProfile: async (parent, { name, email }) => {
-      return Profile.create({ name });
+    // addProfile: async (parent,args) => {
+    //   return Profile.create({ name });
+    // },
+
+    addProfile: async (parent, args) => {
+      const profile = await Profile.create(args);
+      const token = signToken(profile);
+
+      return { token, profile };
     },
+
     addSkill: async (parent, { profileId, skill }) => {
       return Profile.findOneAndUpdate(
         { _id: profileId },
@@ -38,6 +59,7 @@ const resolvers = {
       );
     },
   },
+
 };
 
 module.exports = resolvers;
