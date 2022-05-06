@@ -3,7 +3,7 @@ import React from 'react';
 function NavTabs({ currentPage, handlePageChange }) {
   return (
     <div className='navBar'>
-      <h1 className='ms-auto'> App Title </h1>
+      <h1 className='ms-start'> App Title </h1>
       <ul className="nav nav-tabs justify-content-center ">
         <li className="nav-item justify-content-space-evenly">
           <a
@@ -35,6 +35,27 @@ function NavTabs({ currentPage, handlePageChange }) {
             Profile
           </a>
         </li>
+        <li className="nav-item">
+          <a
+            href="#login"
+
+            onClick={() => handlePageChange('Login')}
+            className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+          >
+            Login
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            href="#signup"
+
+            onClick={() => handlePageChange('Signup')}
+            className={currentPage === 'Signup' ? 'nav-link active' : 'nav-link'}
+          >
+            Signup
+          </a>
+        </li>
+
         <li className="nav-item">
           <a
             href="#about"
