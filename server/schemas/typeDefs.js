@@ -6,7 +6,13 @@ const typeDefs = gql`
     name: String
     email: String
     links: String
+    password: String
     skills: [String]!
+  }
+
+  type Auth {
+    token: ID!
+    profile: Profile
   }
 
   type Query {
@@ -15,6 +21,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    login(email:String!, password: String!): Auth
     addProfile(name: String!): Profile
     addSkill(profileId: ID!, skill: String!): Profile
     removeProfile(profileId: ID!): Profile
