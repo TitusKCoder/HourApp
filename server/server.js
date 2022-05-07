@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./schemas/config/connection');
 
-const PORT = process.env.REACT_APP_PORT || 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 const bcrypt = require('bcryptjs');
 const { default: mongoose } = require('mongoose');
