@@ -28,7 +28,7 @@ export const PROJECTS = [
     image: FOUR,
     name: "Denise Abla",
     technologyUsed: "ReactNative, Javascript, Redux",
-    description: "",
+    description: "I have 10 years of an experience in Cloud Data",
     url: "",
   },
   {
