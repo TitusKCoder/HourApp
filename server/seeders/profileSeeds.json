@@ -1,18 +1,26 @@
 [
   {
     "name": "Brian Kernighan",
+    "email": "brian@test.com",
+    "password": "password1",
     "skills": ["AWK", "AMPL", "Unix"]
   },
   {
     "name": "Max Kanat-Alexander",
+    "email": "max@test.com",
+    "password": "password1",
     "skills": ["Java", "Perl", "Apache", "Python"]
   },
   {
     "name": "Amiko",
+    "email": "amiko@test.com",
+    "password": "password1",
     "skills": ["NodeJS", "MySQL", "MongoDB", "React", "CSS-in-JS"]
   },
   {
     "name": "Kent Beck",
+    "email": "kent@test.com",
+    "password": "password1",
     "skills": [
       "Test-Driven Development",
       "Extreme Programming",
@@ -22,10 +30,14 @@
   },
   {
     "name": "Edward V. Berard",
+    "email": "edward@test.com",
+    "password": "password1",
     "skills": ["Object-Oriented Design"]
   },
   {
     "name": "Alan Kay",
+    "email": "alan@test.com",
+    "password": "password1",
     "skills": [
       "Graphical User Interface (GUI) Design",
       "Jazz Guitar",
@@ -34,18 +46,26 @@
   },
   {
     "name": "C.A.R. Hoare",
+    "email": "car@test.com",
+    "password": "password1",
     "skills": ["Algorithms", "Quicksort", "Hoare Logic"]
   },
   {
     "name": "David Thomas",
+    "email": "david@test.com",
+    "password": "password1",
     "skills": ["Author", "Code Kata", "Ruby", "Pragmatic Programming"]
   },
   {
     "name": "Donald Knuth",
+    "email": "donald@test.com",
+    "password": "password1",
     "skills": ["TeX Computer Typesetting", "Algorithms", "Author"]
   },
   {
     "name": "Lernantino",
+    "email": "lernantino@test.com",
+    "password": "password1",
     "skills": [
       "JavaScript",
       "CSS",
