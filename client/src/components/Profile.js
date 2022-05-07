@@ -22,7 +22,7 @@ const Profiles = () => {
 
             {
               profileData.filter(profile => {
-                if (query === '') {
+                if (search === '') {
                   return profile;
                 } else if (profile.name.toLowerCase().includes(search.toLowerCase())) {
                   return profile;

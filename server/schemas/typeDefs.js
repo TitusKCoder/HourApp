@@ -10,9 +10,11 @@ const typeDefs = gql`
     skills: [String]!
   }
 
-  type skill {
+  type Skill {
     _id: ID
     name: String
+  }
+
   type Auth {
     token: ID!
     profile: Profile
@@ -25,11 +27,10 @@ const typeDefs = gql`
 
   type Query {
     skill(id: ID!): Skill
-    skills(name: Name): [Skill]!
+    skills(name: String!): [Skill]!
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
     login(email:String!, password: String!): Auth
     addProfile(name: String!): Profile
     addSkill(profileId: ID!, skill: String!): Profile
