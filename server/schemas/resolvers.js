@@ -1,5 +1,4 @@
-const { Profile, Skills } = require('../models');
-const { signToken } = require('../utils/auth');
+const { Profile } = require('../models');
 
 const resolvers = {
   Query: {
@@ -10,55 +9,12 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
-
-    skills(parent, args, context, info) {
-      const { name } = args;
-      return context.db.skills
-        .filter((skill) => skill.name == name)
-    }
-    // getSkills: async () => {
-    //   return Skills.find();
-    // },
-    // searchSkills: async (parent, args) => {
-    //   return Skills.find(args.search)
-    // },
   },
 
   Mutation: {
-    // addProfile: async (parent,args) => {
-    //   return Profile.create({ name });
-    // },
-
-    addProfile: async (parent, args) => {
-      const profile = await Profile.create(args);
-      const token = signToken(profile);
-
-      return { token, profile };
+    addProfile: async (parent, { name }) => {
+      return Profile.create({ name });
     },
-
-    addProfile: async (parent, { name, email, password }) => {
-      const profile = await Profile.create({ name, email, password });
-      const token = signToken(profile);
-
-      return { token, profile };
-    },
-    login: async (parent, { email, password }) => {
-      const profile = await Profile.findOne({ email });
-
-      if (!profile) {
-        throw new AuthenticationError('No profile with this email found!');
-      }
-
-      const correctPw = await profile.isCorrectPassword(password);
-
-      if (!correctPw) {
-        throw new AuthenticationError('Incorrect password!');
-      }
-
-      const token = signToken(profile);
-      return { token, profile };
-    },
-    
     addSkill: async (parent, { profileId, skill }) => {
       return Profile.findOneAndUpdate(
         { _id: profileId },
@@ -82,7 +38,6 @@ const resolvers = {
       );
     },
   },
-
 };
 
 module.exports = resolvers;

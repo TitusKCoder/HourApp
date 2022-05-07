@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
-import Profile from './pages/Profile'; 
+import Profile from './Profile'; 
 import About from './pages/About';
 import Home from './pages/Home';
 import Connect from './pages/Connect';

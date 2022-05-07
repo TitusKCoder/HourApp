@@ -10,6 +10,8 @@ import Connect from './components/pages/Connect';
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
 
+import Home from './pages/Home';
+
 
 const client = new ApolloClient({
   uri: '/graphql',
