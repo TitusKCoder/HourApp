@@ -27,7 +27,9 @@ const resolvers = {
         throw new AuthenticationError('No profile with this email found!');
       }
 
-      const correctPw = await profile.isCorrectPassword(password);
+      console.log(profile);
+
+      const correctPw = await profile.comparePassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
@@ -37,7 +39,7 @@ const resolvers = {
       return { token, profile };
     },
     
-    addSkill: async (parent, { profileId, skill }) => {
+    addSkill: async (parent, { profileId, skill }, context) => {
       return Profile.findOneAndUpdate(
         { _id: profileId },
         {
