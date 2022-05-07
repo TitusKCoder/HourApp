@@ -3,9 +3,9 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import { QUERY_PROFILES } from '../utils/queries';
-import profileData from "../../../server/seeders/profileSeeds.json";
+import profileData from "./profileList";
 import { useState } from "react";
-const [search, setSearch] = useState("")
+const [searchTerm, setSearchTerm] = useState("")
 
 
 const Profiles = () => {
@@ -18,19 +18,28 @@ const Profiles = () => {
           <h2><Profiles/></h2>
         </div>
          <div>
-            <input placeholder="Enter Profile name" onChange={event => setSearch(event.target.value)} />
+            <input placeholder="search..." onChange={event => setSearchTerm(event.target.value)} />
 
             {
-              profileData.filter(profile => {
-                if (search === '') {
-                  return profile;
-                } else if (profile.name.toLowerCase().includes(search.toLowerCase())) {
-                  return profile;
+              profileData.filter(val => {
+                if (searchTerm === '') {
+                  return val;
+                } else if (val.name.toLowerCase().includes(search.toLowerCase())) {
+                  return val;
                 }
-              }).map((profile, index) => (
-                <div className="" key={index}>
-                  <p>{profile.name}</p>
-                  <p>{profile.skills}</p>
+              }).map((val, key) => (
+                <div className="" key={key}>
+                  <p>{val.name}</p>
+                  <p>{val.email}</p>
+                  {
+                    val.skills && val.skills.map( (val, key) => {
+                      return(
+                        <>
+                        { key ? ','  : '' } { val }
+                        </>
+                      )
+                    })
+                  }
                 </div>
               ))
             }
@@ -45,39 +54,3 @@ export default Profiles;
 
 
 
-// import React,{useState,useEffect} from 'react';
-// import './App.css';
-
-// function App() {
-//   const [data,setData]=useState([]);
-//   const getData=()=>{
-//     fetch('profileeeds.json'
-//     ,{
-//       headers : {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json'
-//        }
-//     }
-//     )
-//       .then(function(response){
-//         console.log(response)
-//         return response.json();
-//       })
-//       .then(function(profileData) {
-//         console.log(profileData);
-//         setData(profileData)
-//       });
-//   }
-//   useEffect(()=>{
-//     getData()
-//   },[])
-//   return (
-//     <div className="App">
-//      {
-//        data && data.length>0 && data.map((profile)=><p>{profile.skills}</p>)
-//      }
-//     </div>
-//   );
-// }
-
-// export default App;
