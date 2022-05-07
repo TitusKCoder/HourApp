@@ -35,7 +35,7 @@ export const PROJECTS = [
     image: TWO,
     name: "Albert Gone",
     technologyUsed: "ReactJs, Typescript, Redux",
-    description: "The next-gen Robotic Process Automation (#RPA) platform for retail and telecom domains. The ultimate automation platform for your Shopify, Email, E- commerce shop",
+    description: "Working with Data",
     url: "",
   },
   {
