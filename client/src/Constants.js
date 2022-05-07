@@ -49,7 +49,7 @@ export const PROJECTS = [
     image: SIX,
     name: "Carter Stand",
     technologyUsed: "ReactJs, Typescript, Redux",
-    description: "",
+    description: "I have been working in project management",
     url: "",
   },
   {
