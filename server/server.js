@@ -49,3 +49,5 @@ const startApolloServer = async (typeDefs, resolvers) => {
   
   // starts server 
   startApolloServer(typeDefs, resolvers);
+
+  //as of 5/7 at 130pm
