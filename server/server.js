@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
@@ -7,9 +8,8 @@ var cookieParser = require('cookie-parser');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./schemas/config/connection');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.REACT_APP_PORT || 3001;
 const app = express();
-require('dotenv').config();
 const bcrypt = require('bcryptjs');
 const { default: mongoose } = require('mongoose');
 const salt = 10;

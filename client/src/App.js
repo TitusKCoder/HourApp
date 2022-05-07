@@ -31,6 +31,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+    console.log(`ENV TEST is ${process.env.REACT_APP_TEST}`)
 return (
 <ApolloProvider client={client}>
             <Router>

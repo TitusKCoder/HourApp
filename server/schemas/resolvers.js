@@ -29,7 +29,7 @@ const resolvers = {
 
       console.log(profile);
 
-      const correctPw = await profile.comparePassword(password);
+      const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
