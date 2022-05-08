@@ -14,6 +14,10 @@ const profileSchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, 'Please enter a valid email address']
   },
+  password: {
+    type: String,
+    required: true,
+  },
   links: {
     type: String,
     trim: true

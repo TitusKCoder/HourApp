@@ -6,7 +6,13 @@ import About from "./components/About/About";
 import Login from "./components/Security/Login";
 import Signup from "./components/Security/Signup";
 import Projects from "./components/Projects/Projects";
+//
 import Footer from "./components/Footer";
+
+import searchProfile from "./components/Search/SearchProfile";
+
+
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -63,6 +69,8 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
+            <Route path="/searchProfile" component={searchProfile} />
+
           </Switch>
           <Footer />
         </div>

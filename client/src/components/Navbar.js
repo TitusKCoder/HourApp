@@ -8,6 +8,7 @@ import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineSearch,
 } from "react-icons/ai";
 
 import Auth from "../utils/auth";
@@ -72,7 +73,18 @@ function NavBar() {
                 <CgFileDocument  style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
-
+            <Nav.Item>
+              <Nav.Link
+               as={Link}
+               to="/searchProfile"
+               onClick={() => updateExpanded(false)}
+              >
+                 <AiOutlineSearch
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+               Search
+              </Nav.Link>
+            </Nav.Item>
             <Nav.Item>
               <Nav.Link
                 as={Link}
@@ -109,6 +121,7 @@ function NavBar() {
                     </Nav.Link>
                   </Nav.Item></>
           )}
+
           </Nav>
         </Navbar.Collapse>
       </Container>
