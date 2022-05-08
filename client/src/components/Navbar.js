@@ -83,7 +83,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/Login"
+                to="/login"
                 onClick={() => updateExpanded(false)}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Login 
@@ -97,6 +97,15 @@ function NavBar() {
                onClick={() => updateExpanded(false)}
               >
                 <ImBlog style={{ marginBottom: "2px" }} /> Sign Up
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+               as={Link}
+               to="/searchProfile"
+               onClick={() => updateExpanded(false)}
+              >
+               Search
               </Nav.Link>
             </Nav.Item>
           </Nav>
