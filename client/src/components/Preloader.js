@@ -6,7 +6,7 @@ function Preloader(props) {
   return (
     <div id={props.load ? "preloader" : "preloader-none"}>
       <Loader
-        type="Plane"
+        type="Tailspin"
         color="#343e47"
         height={100}
         width={100}

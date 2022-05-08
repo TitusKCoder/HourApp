@@ -3,6 +3,8 @@ import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
+import Login from "./components/Security/Login";
+import Signup from "./components/Security/Signup";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -59,6 +61,8 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/project" component={Projects} />
             <Route path="/about" component={About} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
           </Switch>
           <Footer />
         </div>
