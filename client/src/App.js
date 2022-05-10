@@ -5,15 +5,14 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
+import Join from './layout/Join/Join';
+import Chat from './layout/Chat/Chat';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
-import ScrollToTop from "./components/ScrollToTop";
-
 
 
 const httpLink = createHttpLink({
@@ -54,11 +53,14 @@ function App() {
       ) : (
         <div className="App" id={load ? "no-scroll" : "scroll"}>
           <Navbar />
-          <ScrollToTop />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/project" component={Projects} />
             <Route path="/about" component={About} />
+            <Router>
+            <Route path="/" exact component={Join} />
+            <Route path="/chat" component={Chat} />
+             </Router>
           </Switch>
           <Footer />
         </div>
