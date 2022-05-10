@@ -28,7 +28,7 @@ export const PROJECTS = [
     image: FOUR,
     name: "Denise Abla",
     technologyUsed: "ReactNative, Javascript, Redux",
-    description: "",
+    description: "I have 10 years of an experience in Cloud Data",
     url: "",
   },
   {
@@ -49,7 +49,7 @@ export const PROJECTS = [
     image: SIX,
     name: "Carter Stand",
     technologyUsed: "ReactJs, Typescript, Redux",
-    description: "",
+    description: "I have been working in project management",
     url: "",
   },
   {
