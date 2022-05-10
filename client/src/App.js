@@ -10,7 +10,8 @@ import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";
 
 import searchProfile from "./components/Search/SearchProfile";
-
+// import Join from './layout/Join/Join';
+import Chat from './layout/Chat/Chat';
 
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -19,9 +20,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
-import ScrollToTop from "./components/ScrollToTop";
-
 
 
 const httpLink = createHttpLink({
@@ -62,7 +60,6 @@ function App() {
       ) : (
         <div className="App" id={load ? "no-scroll" : "scroll"}>
           <Navbar />
-          <ScrollToTop />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/project" component={Projects} />
@@ -71,6 +68,7 @@ function App() {
             <Route path="/signup" component={Signup} />
             <Route path="/profiles/:profileId" component={Profile} />
             <Route path="/searchProfile" component={searchProfile} />
+            <Route path="/chat" component={Chat} />
 
           </Switch>
           <Footer />

@@ -67,10 +67,10 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/about"
+                to="/chat"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument  style={{ marginBottom: "2px" }} /> About
+                <CgFileDocument  style={{ marginBottom: "2px" }} /> Chat
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
