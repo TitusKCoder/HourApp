@@ -12,13 +12,19 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return Profile.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    }
   },
 
   Mutation: {
     addProfile: async (parent, { name, email, password,skills}) => {
       const profile = await Profile.create({ name, email, password,skills});
       const token = signToken(profile);
-
+      
       return { token, profile };
     },
     login: async (parent, { email, password }) => {
@@ -30,7 +36,7 @@ const resolvers = {
 
       console.log(profile);
 
-      const correctPw = await profile.isCorrectPassword(password);
+      const correctPw = await profile.isCorrectPassword (password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
@@ -41,26 +47,32 @@ const resolvers = {
     },
     
     addSkill: async (parent, { profileId, skill }, context) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        {
-          $addToSet: { skills: skill },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
+      if (context.user) {
+        return Profile.findOneAndUpdate(
+          { _id: profileId },
+          {
+            $addToSet: { skills: skill },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
     removeProfile: async (parent, { profileId }) => {
       return Profile.findOneAndDelete({ _id: profileId });
     },
-    removeSkill: async (parent, { profileId, skill }) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        { $pull: { skills: skill } },
-        { new: true }
-      );
+    removeSkill: async (parent, { skill }, context) => {
+      if (context.user) {
+        return Profile.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { skills: skill } },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
   },
 };
