@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Connect from './pages/Connect';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import SearchProfile from './Search/SearchProfile';
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -27,6 +28,9 @@ export default function PortfolioContainer() {
     }
     if(currentPage === 'Signup') {
       return <Signup />;
+    }
+    if(currentPage === 'SearchProfile') {
+      return <SearchProfile />;
     }
     return <About />;
   };

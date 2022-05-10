@@ -1,15 +1,17 @@
 
 import React from 'react';
-import profileData from "./profileList";
 import { useState } from "react";
-// import "./style.css";
-// import "./App.css";
+import {useQuery} from '@apollo/client';
+import { QUERY_PROFILES } from './../utils/queries';
 
 
-const Profiles = () => {
-  // const { loading, data } = useQuery(QUERY_PROFILES);
-  // const profiles = data?.profiles || [];
+export default function Profiles() {
+ 
+
+  const { loading, data } = useQuery(QUERY_PROFILES)
   const [searchTerm, setSearchTerm] = useState("")
+  console.log({ loading });
+  if (loading) return "Loading...";
   return (
     <main>
         <div>
@@ -20,7 +22,7 @@ const Profiles = () => {
             <input type="text" placeholder="search..." onChange={event => setSearchTerm(event.target.value)} />
 
             {
-              profileData.filter(val => {
+              data.filter(val => {
                 if (searchTerm === '') {
                   return val;
                 } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -41,6 +43,7 @@ const Profiles = () => {
                   }
                 </div>
               ))
+            
             }
             
           </div>
@@ -48,9 +51,3 @@ const Profiles = () => {
     </main>
   );
 };
-
-export default Profiles;
-
-
-
-

@@ -10,8 +10,9 @@ import signup from "./components/pages/Signup";
 
 import Footer from "./components/Footer";
 
-import searchProfile from "./components/Search/SearchProfile";
+import searchProfile from "./components/SearchProfile";
 
+// import Rating from "./components/About/Rating";
 import "./App.css";
 
 
@@ -24,6 +25,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 import ScrollToTop from "./components/ScrollToTop";
+
 
 
 const httpLink = createHttpLink({
@@ -72,12 +74,12 @@ function App() {
               <Route path="/login" component={login} />
               <Route path="/signup" component={signup} />
               <Route path="/searchProfile" component={searchProfile} />
-              <div>
-              
-              </div>
+          
             </Switch>
+
             <Footer />
           </div>
+       
         )}
       </Router>
     </ApolloProvider>

@@ -7,6 +7,7 @@ export const QUERY_PROFILES = gql`
     profiles {
       _id
       name
+      email
       skills
     }
   }
