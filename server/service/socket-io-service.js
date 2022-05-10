@@ -1,42 +1,18 @@
-<<<<<<< HEAD
-// const server = require('socket.io');
-// import cors from 'cors'; 
-=======
 import { Server } from 'socket.io';
 import cors from 'cors'; 
 import { addUser, removeUser, getUser, getUsersInRoom } from './users';
->>>>>>> b60c773aed93c0210673febd7ea4f6cb7b3c2a88
 
-// app.use(cors());
+app.use(cors());
 
-// function socketService () {
+function socketService () {
 
-// const io = new Server(server, {
-//     cors: {
-//       origin: "http://localhost:3000",
-//       methods: ["GET", "POST"],
-//     },
-//   });
+const io = new Server(server, {
+    cors: {
+      origin: "http://localhost:3000",
+      methods: ["GET", "POST"],
+    },
+  });
 
-<<<<<<< HEAD
-//   io.on("connection", (socket) => {
-//     console.log(`User Connected: ${socket.id}`);
-  
-//     socket.on("join_room", (data) => {
-//       socket.join(data);
-//       console.log(`User with ID: ${socket.id} joined room: ${data}`);
-//     });
-  
-//     socket.on("send_message", (data) => {
-//       socket.to(data.room).emit("receive_message", data);
-//     });
-  
-//     socket.on("disconnect", () => {
-//       console.log("User Disconnected", socket.id);
-//     });
-//   });
-// }
-=======
   io.on('connect', (socket) => {
     console.log('Welcome!');
 
@@ -89,6 +65,5 @@ import { addUser, removeUser, getUser, getUsersInRoom } from './users';
     });
 });
 }
->>>>>>> b60c773aed93c0210673febd7ea4f6cb7b3c2a88
 
-// export default socketService;
+export default socketService;

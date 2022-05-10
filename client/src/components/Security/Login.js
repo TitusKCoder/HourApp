@@ -50,7 +50,9 @@ export default function Login (props)  {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
+              <div>
               <form onSubmit={handleFormSubmit}>
+                
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -75,6 +77,7 @@ export default function Login (props)  {
                   Submit
                 </button>
               </form>
+              </div>
             )}
 
             {error && (

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-// const http = require('http');
-// const socketioService = require ('./service/socket-io-service');
+const http = require('http');
+const socketioService = require ('./service/socket-io-service');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const {authMiddleware} = require('./utils/auth');
@@ -11,7 +11,7 @@ const db = require('./schemas/config/connection');
 
 
 const PORT = process.env.PORT || 3001;
-// const httpServer = new http.Server(app);
+const httpServer = new http.Server(app);
 
 const server = new ApolloServer({
   typeDefs,
@@ -29,7 +29,7 @@ if(process.env.NODE_ENV === 'production'){
 app.use(express.static(path.join(__dirname, '../client/build')));}
 
 
-// socketioService(httpServer);
+socketioService(httpServer);
 
 
 app.get('/', (req, res) => {
