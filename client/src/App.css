@@ -6,7 +6,32 @@
   height: 40vmin;
   pointer-events: none;
 }
+/* search*/
+.box {
+  text-align: left;
+  border: black ridge 1px;
+  border-radius: 10px;
+  margin: 3px;
+  width: 20rem;
+  padding-left: 10px;
+}
+/* rating */
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+}
 
+body {
+  padding: 100px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

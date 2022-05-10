@@ -16,7 +16,9 @@ const httpServer = new http.Server(app);
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware,
+  introspection: true,
+  playground: true,
+  context: authMiddleware
 });
 
 const app = express();

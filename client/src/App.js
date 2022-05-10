@@ -8,10 +8,13 @@ import Signup from "./components/Security/Signup";
 import Projects from "./components/Projects/Projects";
 import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";
+import Chat from "./layout/Chat/Chat"
 
-import searchProfile from "./components/Search/SearchProfile";
-// import Join from './layout/Join/Join';
-import Chat from './layout/Chat/Chat';
+import searchProfile from "./components/SearchProfile";
+
+// import Rating from "./components/About/Rating";
+import "./App.css";
+
 
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -23,22 +26,22 @@ import { setContext } from '@apollo/client/link/context';
 
 
 const httpLink = createHttpLink({
-    uri: '/graphql'
+  uri: '/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {
-    const token = localStorage.getItem('id_token');
-    return {
-        headers: {
-            ...headers,
-            authorization: token ? `Bearer ${token}` : '',
-        },
-    };
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
 });
 
 const client = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
 
 function App() {
