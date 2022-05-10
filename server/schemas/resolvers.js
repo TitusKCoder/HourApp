@@ -12,6 +12,12 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return Profile.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    }
   },
 
   Mutation: {
@@ -41,26 +47,32 @@ const resolvers = {
     },
     
     addSkill: async (parent, { profileId, skill }, context) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        {
-          $addToSet: { skills: skill },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
+      if (context.user) {
+        return Profile.findOneAndUpdate(
+          { _id: profileId },
+          {
+            $addToSet: { skills: skill },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
     removeProfile: async (parent, { profileId }) => {
       return Profile.findOneAndDelete({ _id: profileId });
     },
-    removeSkill: async (parent, { profileId, skill }) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        { $pull: { skills: skill } },
-        { new: true }
-      );
+    removeSkill: async (parent, { skill }, context) => {
+      if (context.user) {
+        return Profile.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { skills: skill } },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
   },
 };

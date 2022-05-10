@@ -16,8 +16,6 @@ const server = new ApolloServer({
 });
 
 const app = express();
-// const bcrypt = require('bcryptjs');
-// const { default: mongoose } = require('mongoose');
 
 
 app.use(express.urlencoded({ extended: false }));

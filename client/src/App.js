@@ -6,7 +6,7 @@ import About from "./components/About/About";
 import Login from "./components/Security/Login";
 import Signup from "./components/Security/Signup";
 import Projects from "./components/Projects/Projects";
-//
+import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";
 
 import searchProfile from "./components/Search/SearchProfile";
@@ -69,6 +69,7 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
+            <Route path="/profiles/:profileId" component={Profile} />
             <Route path="/searchProfile" component={searchProfile} />
 
           </Switch>

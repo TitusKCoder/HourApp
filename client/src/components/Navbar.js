@@ -99,9 +99,18 @@ function NavBar() {
             </Nav.Item>
 
             {Auth.loggedIn() ? (
-            <Nav.Item><button className="btn btn-lg btn-light m-2" onClick={logout}>
+            <><Nav.Item>
+            <Nav.Link
+              as={Link}
+              to="/profiles/:profileId"
+              onClick={() => updateExpanded(false)}
+            >
+              <AiOutlineUser style={{ marginBottom: "2px" }} /> View Profile
+            </Nav.Link>
+          </Nav.Item>            <Nav.Item><button className="btn btn-lg btn-light m-2" onClick={logout}>
             Logout
-          </button></Nav.Item>
+          </button></Nav.Item></>
+
           ) : (
             <><Nav.Item>
                   <Nav.Link
