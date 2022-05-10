@@ -1,4 +1,4 @@
-import { Server } from 'socket.io';
+const server = require('socket.io');
 import cors from 'cors'; 
 
 app.use(cors());
