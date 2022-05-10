@@ -1,5 +1,7 @@
 require('dotenv').config();
 const express = require('express');
+const http = require('http');
+const socketioService = require ('./service/socket-io-service');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const {authMiddleware} = require('./utils/auth');
@@ -14,6 +16,8 @@ const bcrypt = require('bcryptjs');
 const { default: mongoose } = require('mongoose');
 const salt = 10;
 
+const httpServer = new http.Server(app);
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -25,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 
+socketioService(httpServer);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
@@ -40,7 +45,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   server.applyMiddleware({ app });
   
   db.once('open', () => {
-    app.listen(PORT, () => {
+    httpServer.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     })
