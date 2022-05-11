@@ -5,8 +5,10 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
-import Join from './layout/Join/Join';
-import Chat from './layout/Chat/Chat';
+
+// import Join from './layout/Join/Join';
+// import Chat from './layout/Chat/Chat';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -58,8 +60,8 @@ function App() {
             <Route path="/project" component={Projects} />
             <Route path="/about" component={About} />
             <Router>
-            <Route path="/" exact component={Join} />
-            <Route path="/chat" component={Chat} />
+            {/* <Route path="/" exact component={Join} />
+            <Route path="/chat" component={Chat} /> */}
              </Router>
           </Switch>
           <Footer />
