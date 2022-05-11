@@ -1,5 +1,5 @@
 .Header {
-    background-color: #A4C2A5;
+    background-color: #004f53;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,17 +9,6 @@
 
 .HeaderWrap {
     padding: 3px 10px 0;
-}
-
-.Logo {
-    padding: 0;
-    margin: 0 5px 0 0;
-    width: 17px;
-    display: inline-block;
-}
-
-.logoImage {
-    fill: #fff;
 }
 
 

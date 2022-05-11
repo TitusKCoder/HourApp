@@ -7,14 +7,14 @@ export default function Header() {
         <header className={classes.Header}>
             <div className={classes.HeaderWrap}>
                 <h1 className={classes.HeaderTitle}>
-                    <span className={classes.Logo}>
+                    {/* <span className={classes.Logo}>
                         <img
                             className={classes.LogoImage}
                             src="/images/logo.svg"
                             alt="Logo"
                         />
-                    </span>
-                    HOUR APP
+                    </span> */}
+                    Hour
                 </h1>
             </div>
         </header>

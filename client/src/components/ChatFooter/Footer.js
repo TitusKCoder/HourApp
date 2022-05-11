@@ -1,19 +1,13 @@
 import React from 'react';
 
-import classes from './Footer.css';
+import classes from '../ChatFooter/Footer.css';
 
 const Footer = () => {
     return (
         <footer className={classes.Footer}>
             <p>
-                © 2022 | Hour App | Created by The Oh Snap Team |{' '}
-                <a
-                    href="something@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Thank You!
-                </a>
+             Create With A Mentor
+               
             </p>
         </footer>
     );

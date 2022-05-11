@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import classes from './Join.css';
-import ChatHeader from '../../components/ChatHeader/Header';
+// import ChatHeader from '../../components/ChatHeader/Header';
 import ChatFooter from '../../components/ChatFooter/Footer';
 
 const Join = () => {
@@ -11,13 +11,12 @@ const Join = () => {
 
     return (
         <div className={classes.joinOuterContainer}>
-            <ChatHeader />
+            {/* <ChatHeader /> */}
             <div className={classes.joinInnerContainer}>
                 <h1>
-                    SAY.OK - Secure Chat for communication. Fill in the form
-                    fields by entering the name and name of the room, then click
-                    the "SIGN IN" button. If you are creating a new room, let
-                    future people know its name.
+                    Meet With Your Mentor! Secure Chat for communication. Fill in the form
+                    fields by entering the name and name of the room your mentor sent you, then click
+                    the "SIGN IN" button. 
                 </h1>
                 <h3>Create Room or Login to the Сhat</h3>
                 <div>
