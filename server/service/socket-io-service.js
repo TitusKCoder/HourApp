@@ -1,17 +1,31 @@
-import { Server } from 'socket.io';
+require('dotenv').config();
+const path = require('path');
+const express = require('express');
+const socketio = require('socket.io');
+const http = require('http');
+
+const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
+const PORT = process.env.PORT || 3001;
+
+const app = express();
 import cors from 'cors'; 
-import { addUser, removeUser, getUser, getUsersInRoom } from './users';
 
 app.use(cors());
 
-function socketService () {
+const server = http.createServer(app);
+const io = socketio(server);
 
-const io = new Server(server, {
-    cors: {
-      origin: "http://localhost:3000",
-      methods: ["GET", "POST"],
-    },
-  });
+if (process.env.PROD) {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    });
+} else {
+    app.use(express.static(path.join(__dirname, '/')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'index.html'));
+    });
+}
 
   io.on('connect', (socket) => {
     console.log('Welcome!');
@@ -64,6 +78,10 @@ const io = new Server(server, {
         }
     });
 });
-}
 
-export default socketService;
+server.listen(PORT, () => {
+    console.log(`**************************************`);
+    console.log(`Server is running on port: ${PORT}`);
+    console.log(`URL address: http://localhost:${PORT}`);
+    console.log(`**************************************`);
+});
