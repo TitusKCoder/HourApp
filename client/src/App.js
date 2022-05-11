@@ -4,14 +4,14 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Login from "./components/Security/Login";
-import Signup from "./components/Security/Signup";
+import Signup from "./components/Security/signup";
 import Projects from "./components/Projects/Projects";
 import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";
+import Chat from "./layout/Chat/Chat";
 
 import searchProfile from "./components/SearchProfile";
 
-// import Rating from "./components/About/Rating";
 import "./App.css";
 
 
@@ -25,7 +25,7 @@ import { setContext } from '@apollo/client/link/context';
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {

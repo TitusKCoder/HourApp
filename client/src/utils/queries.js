@@ -13,6 +13,17 @@ export const QUERY_PROFILES = gql`
   }
 `;
 
+export const GET_PROFILES = gql`
+  query Profiles($profilesInput: profilesInputFilter) {
+    profiles(input: $profilesInput) {
+      id
+      name
+      email
+      skills
+    }
+  }
+`;
+
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
