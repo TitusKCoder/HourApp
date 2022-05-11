@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import makeToast from "../../Toaster";
 
+
 const RegisterPage = (props) => {
   const nameRef = React.createRef();
   const emailRef = React.createRef();

@@ -8,7 +8,7 @@ import ChatroomPage from "./components/pages/DashboardPage";
 import io from "socket.io-client";
 import makeToast from "./Toaster";
 
-import "./styles/common.css";
+// import "./styles/common.css";
 
 function AppSocket() {
   const [socket, setSocket] = React.useState(null);
