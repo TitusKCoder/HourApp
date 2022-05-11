@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './InputStyle.css';
+import classes from '../Input/InputStyle.css';
 
 const Input = ({ message, setMessage, sendMessage }) => {
     return (
