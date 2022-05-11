@@ -8,14 +8,14 @@ import {QUERY_PROFILES} from '../../utils/queries';
 
 function Projects() {
 
-// const {data, loading, error} = useQuery(QUERY_PROFILES);
+const {data, loading, error} = useQuery(QUERY_PROFILES);
 
-// if (loading) return <h1>Loading...</h1>;
-// if (error) return <h1>An error occurred</h1>;
+if (loading) return <h1>Loading...</h1>;
+if (error) return <h1>An error occurred</h1>;
 
   return (
     <Container fluid className="project-section">
-      {/* {Auth.loggedIn() ? ( */}
+      {Auth.loggedIn() ? (
         <Container>
           <h1 className="project-heading">
             Meet <strong className="purple">Mentors </strong>
