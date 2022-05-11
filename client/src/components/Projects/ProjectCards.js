@@ -6,7 +6,6 @@ import { BiLinkExternal } from "react-icons/bi";
 function ProjectCards(props) {
   return (
     <Card className="project-card-view">
-      {/* <Card.Img variant="top" src={props.imgPath} alt="card-img" /> */}
       <Card.Body>
         <Card.Title style={{fontWeight: "bold"}}>{props.name}</Card.Title>
         <Card.Text className="purple">Skill: {props.skills.join(', ')}</Card.Text>
