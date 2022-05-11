@@ -8,8 +8,8 @@ function ProjectCards(props) {
     <Card className="project-card-view">
       {/* <Card.Img variant="top" src={props.imgPath} alt="card-img" /> */}
       <Card.Body>
-        {/* <Card.Title style={{fontWeight: "bold"}}>{props.name}</Card.Title>
-        <Card.Text className="purple">Skill: {props.skills.join(', ')}</Card.Text> */}
+        <Card.Title style={{fontWeight: "bold"}}>{props.name}</Card.Title>
+        <Card.Text className="purple">Skill: {props.skills.join(', ')}</Card.Text>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
