@@ -4,7 +4,8 @@ import { addUser, removeUser, getUser, getUsersInRoom } from './users';
 
 app.use(cors());
 
-function socketService () {
+module.exports= { 
+  socketService: function (){
 
 const io = new Server(server, {
     cors: {
@@ -65,5 +66,4 @@ const io = new Server(server, {
     });
 });
 }
-
-export default socketService;
+}
