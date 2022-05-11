@@ -3,7 +3,7 @@
 * {
   font-family: Montserrat;
   box-sizing: border-box;
-  color: #333;
+  color: #091E05;
 }
 
 body {
@@ -62,7 +62,7 @@ input:focus {
 }
 
 button {
-  background: #091E05;
+  background: #A4C2A5;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 2px;
