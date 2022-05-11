@@ -1,12 +1,14 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import LoginPage from "./components/pages/Login";
+// import LoginPage from "./components/pages/Login";
 import RegisterPage from "./components/pages/RegisterPage";
 import DashboardPage from "./components/pages/DashboardPage";
-import IndexPage from "./components/pages/IndexPage";
+// import IndexPage from "./components/pages/IndexPage";
 import ChatroomPage from "./components/pages/DashboardPage";
 import io from "socket.io-client";
 import makeToast from "./Toaster";
+
+import "./styles/common.css";
 
 function AppSocket() {
   const [socket, setSocket] = React.useState(null);
@@ -42,12 +44,12 @@ function AppSocket() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={IndexPage} exact />
+        {/* <Route path="/" component={IndexPage} exact />
         <Route
           path="/login"
           render={() => <LoginPage setupSocket={setupSocket} />}
           exact
-        />
+        /> */}
         <Route path="/register" component={RegisterPage} exact />
         <Route
           path="/dashboard"

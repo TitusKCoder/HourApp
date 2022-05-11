@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import AppSocket from "./AppSocket";
-import "./styles/common.css";
+// import "./styles/common.css";
 import "./styles/chatroom.css";
 
 
