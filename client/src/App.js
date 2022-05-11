@@ -56,14 +56,13 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/project" component={Projects} />
             <Route path="/about" component={About} />
-            
-        
           </Switch>
           <Footer />
         </div>
       )}
     </Router>
-    </ApolloProvider>
+  </ApolloProvider>
+  
   );
 }
 

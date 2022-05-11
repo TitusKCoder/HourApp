@@ -92,9 +92,9 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                href=""
-                target="_blank"
-                rel="noreferrer"
+              as={Link}
+              to="/RegisterPage"
+              onClick={() => updateExpanded(false)}
               >
                 <ImBlog style={{ marginBottom: "2px" }} /> Sign Up
               </Nav.Link>

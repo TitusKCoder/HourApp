@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require('express');
-const http = require('http');
-const socketioService = require ('./service/socket-io-service');
+// const http = require('http');
+// const socketioService = require ('./service/socket-io-service');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const {authMiddleware} = require('./utils/auth');
 var cookieParser = require('cookie-parser');
+const chatRoute = require('./routes/chatroom');
+const userRoute = require('./routes/user');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./schemas/config/connection');
@@ -16,7 +18,7 @@ const bcrypt = require('bcryptjs');
 const { default: mongoose } = require('mongoose');
 const salt = 10;
 
-const httpServer = new http.Server(app);
+// const httpServer = new http.Server(app);
 
 const server = new ApolloServer({
   typeDefs,
@@ -28,8 +30,9 @@ app.set('view engine','ejs')
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
-
-socketioService(httpServer);
+app.use('/routes/chatroom', chatRoute);
+app.use('/routes/user', userRoute);
+// socketioService(httpServer);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
@@ -45,7 +48,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   server.applyMiddleware({ app });
   
   db.once('open', () => {
-    httpServer.listen(PORT, () => {
+    app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     })
