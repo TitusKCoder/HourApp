@@ -1,34 +1,38 @@
 require('dotenv').config();
 const express = require('express');
+// const http = require('http');
+// const socketioService = require ('./service/socket-io-service');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const {authMiddleware} = require('./utils/auth');
-var cookieParser = require('cookie-parser');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./schemas/config/connection');
 
+
 const PORT = process.env.PORT || 3001;
-const app = express();
-const bcrypt = require('bcryptjs');
-const { default: mongoose } = require('mongoose');
-const salt = 10;
+// const httpServer = new http.Server(app);
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true,
+  playground: true,
   context: authMiddleware
 });
 
-app.set('view engine','ejs')
+const app = express();
+
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cookieParser());
+
+if(process.env.NODE_ENV === 'production'){
+app.use(express.static(path.join(__dirname, '../client/build')));}
 
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+// socketioService(httpServer);
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));

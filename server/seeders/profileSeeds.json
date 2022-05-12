@@ -1,71 +1,90 @@
 [
   {
+    "id": 1,
     "name": "Brian Kernighan",
     "email": "brian@test.com",
-    "password": "password1",
-    "skills": ["AWK", "AMPL", "Unix"]
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
+    "skills": ["AWK", "AMPL", "Unix"],
+    "links": "http://google.com"
   },
   {
+    "id": 2,
     "name": "Max Kanat-Alexander",
     "email": "max@test.com",
-    "password": "password1",
-    "skills": ["Java", "Perl", "Apache", "Python"]
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
+    "skills": ["Java", "Perl", "Apache", "Python"],
+    "links": "https://www.linkedin.com/"
   },
   {
+    "id": 3,
     "name": "Amiko",
     "email": "amiko@test.com",
-    "password": "password1",
-    "skills": ["NodeJS", "MySQL", "MongoDB", "React", "CSS-in-JS"]
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
+    "skills": ["NodeJS", "MySQL", "MongoDB", "React", "CSS-in-JS"],
+    "links": "https://www.linkedin.com/"
   },
   {
+    "id": 4,
     "name": "Kent Beck",
     "email": "kent@test.com",
-    "password": "password1",
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
     "skills": [
       "Test-Driven Development",
       "Extreme Programming",
       "Software Design Patterns",
       "JUnit"
-    ]
+    ],
+    "links": "http://google.com"
   },
   {
+    "id": 5,
     "name": "Edward V. Berard",
     "email": "edward@test.com",
-    "password": "password1",
-    "skills": ["Object-Oriented Design"]
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
+    "skills": ["Object-Oriented Design"],
+    "links": "http://google.com"
   },
   {
+    "id": 6,
     "name": "Alan Kay",
     "email": "alan@test.com",
-    "password": "password1",
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
     "skills": [
       "Graphical User Interface (GUI) Design",
       "Jazz Guitar",
       "Education"
-    ]
+    ],
+    "links": "http://google.com"
   },
   {
+    "id": 7,
     "name": "C.A.R. Hoare",
     "email": "car@test.com",
-    "password": "password1",
-    "skills": ["Algorithms", "Quicksort", "Hoare Logic"]
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
+    "skills": ["Algorithms", "Quicksort", "Hoare Logic"],
+    "links": "http://google.com"
   },
   {
+    "id": 8,
     "name": "David Thomas",
     "email": "david@test.com",
-    "password": "password1",
-    "skills": ["Author", "Code Kata", "Ruby", "Pragmatic Programming"]
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
+    "skills": ["Author", "Code Kata", "Ruby", "Pragmatic Programming"],
+    "links": "http://google.com"
   },
   {
+    "id": 9,
     "name": "Donald Knuth",
     "email": "donald@test.com",
-    "password": "password1",
-    "skills": ["TeX Computer Typesetting", "Algorithms", "Author"]
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
+    "skills": ["TeX Computer Typesetting", "Algorithms", "Author"],
+    "links": "http://google.com"
   },
   {
+    "id" : 10,
     "name": "Lernantino",
     "email": "lernantino@test.com",
-    "password": "password1",
+    "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
     "skills": [
       "JavaScript",
       "CSS",
@@ -73,6 +92,7 @@
       "Design Systems",
       "Typescript",
       "PWAs"
-    ]
+    ],
+    "links": "http://google.com"
   }
 ]
