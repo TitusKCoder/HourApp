@@ -14,7 +14,7 @@ export default function MentorCards(props) {
         </Card.Text>
         <Button href={props.link} target="_blank"className="download-button">
           <BiLinkExternal /> &nbsp;
-          {props.isBlog ? "View Blog" : "Book"}
+          {props.isBlog ? "View Blog" : "Chat"}
         </Button>
       </Card.Body>
     </Card>
