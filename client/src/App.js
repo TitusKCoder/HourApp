@@ -14,6 +14,16 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 
+
+// import LoginPage from "./components/pages/Login";
+import RegisterPage from "./components/pages/RegisterPage";
+import DashboardPage from "./components/pages/DahboardPage/DashboardPage";
+import IndexPage from "./components/pages/IndexPage";
+import ChatroomPage from "./components/pages/chatroom/ChatroomPage";
+// import io from "socket.io-client";
+// import makeToast from "./Toaster";
+
+
 const httpLink = createHttpLink({
     uri: '/graphql'
 });
@@ -56,6 +66,29 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/project" component={Projects} />
             <Route path="/about" component={About} />
+            <Route path="/" component={IndexPage} exact />
+
+         <Route
+         Redirect from="/Login" to="/RegisterPage" />
+         <Route>
+           <RegisterPage />
+         </Route>
+         <Route
+         Redirect from="/Login" to="/RegisterPage" />
+<Route>
+  <RegisterPage />
+</Route>
+
+<Route
+         Redirect from="/dashboard" to="/dashboardPage" />
+<Route>
+  <DashboardPage />
+</Route>
+<Route
+      exact path="/chatroom/:id" />
+<Route>
+  <ChatroomPage />
+</Route>
           </Switch>
           <Footer />
         </div>

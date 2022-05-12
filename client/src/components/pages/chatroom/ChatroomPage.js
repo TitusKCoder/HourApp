@@ -1,6 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+// import "../chatroom/chatroom";
+// import "../../"
+
 const ChatroomPage = ({ match, socket }) => {
   const chatroomId = match.params.id;
   const [messages, setMessages] = React.useState([]);

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import makeToast from "../../Toaster";
-
+import "../../styles/common.css"
 
 const RegisterPage = (props) => {
   const nameRef = React.createRef();
