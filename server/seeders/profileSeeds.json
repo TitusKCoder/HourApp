@@ -13,7 +13,7 @@
     "email": "max@test.com",
     "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
     "skills": ["Java", "Perl", "Apache", "Python"],
-    "links": "http://google.com"
+    "links": "https://www.linkedin.com/"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "email": "amiko@test.com",
     "password": "$2a$12$oDxxK3UUWlanif9XksIFsedRkpFfDOgJIPlcvKUuokVOOIjHR0nTq",
     "skills": ["NodeJS", "MySQL", "MongoDB", "React", "CSS-in-JS"],
-    "links": "http://google.com"
+    "links": "https://www.linkedin.com/"
   },
   {
     "id": 4,

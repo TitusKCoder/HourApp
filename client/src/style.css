@@ -15,6 +15,26 @@ html {
   align-items: center;
 }
 
+
+.card {
+  margin: 2rem 2rem 2rem 0;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 0 28px 4px rgba(0,0,0,0.1);
+  transition: transform .3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card__title {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+
 /* --------- */
 /*  Preloader */
 /* --------- */
@@ -478,13 +498,15 @@ html {
 }
 
 .project-card-view {
-  box-shadow: 0 4px 5px 3px #343e47 !important;
-  color: #414141 !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
-  height: 100% !important;
+  box-shadow: 0 4px 5px 3px #343e47;
+  color: #414141;
+  background-color: transparent;
+  opacity: 0.9;
+  transition: all 0.5s ease 0s;
+  width:fit-content;
+  height:fit-content;
 }
+
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
@@ -522,11 +544,11 @@ html {
   box-shadow: 0 3px 3px 5px rgba(155, 88, 173, 0.65) !important;
 }
 
-.card-img-top {
+/* .card-img-top {
   padding: 20px !important;
   opacity: 0.8 !important;
   border-radius: 10px !important;
-}
+} */
 
 .blog-img {
   padding: 0px !important;
