@@ -7,8 +7,6 @@ const path = require('path');
 const {authMiddleware} = require('./utils/auth');
 var cookieParser = require('cookie-parser');
 
-// const chatRoute = require('./routes/chatroom');
-// const userRoute = require('./routes/user');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./schemas/config/connection');
@@ -32,9 +30,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 
-// app.use('/routes/chatroom', chatRoute);
-// app.use('/routes/user', userRoute);
-// socketioService(httpServer);
+//Setup Cross origin 
+app.use(require("cors")());
+
+//Bring in the routes 
+app.use("/user", require("./routes/user"));
+app.use("/chatroom", require("./routes/chatroom"));
+
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
@@ -59,5 +62,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   
   // starts server 
   startApolloServer(typeDefs, resolvers);
+
+  module.exports = app;
 
   //as of 5/7 at 130pm

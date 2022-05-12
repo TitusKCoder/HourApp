@@ -1,80 +1,106 @@
-import React from "react";
-import axios from "axios";
-import makeToast from "../../Toaster";
 
-//take out, homepsage is back to normal and register is mess up
 // import "../../styles/common.css"
 
-// import "../../../src/style.css";
-// import "../../../src/App.css";
-const RegisterPage = (props) => {
-  const nameRef = React.createRef();
-  const emailRef = React.createRef();
-  const passwordRef = React.createRef();
 
-  const registerUser = (props) => {
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
 
-    axios
-      .post("http://localhost:8000/user/register", {
-        name,
-        email,
-        password,
-      })
-      .then((response) => {
-        makeToast("success", response.data.message);
-        props.history.push("/login");
-      })
-      .catch((err) => {
-        // console.log(err);
-        if (
-          err &&
-          err.response &&
-          err.response.data &&
-          err.response.data.message
-        )
-          makeToast("error", err.response.data.message);
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import { useMutation } from '@apollo/client';
+import { ADD_PROFILE } from '../../utils/mutation';
+
+import Auth from '../../utils/auth';
+
+const RegisterPage = () => {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addProfile({
+        variables: { ...formState },
       });
+
+      Auth.login(data.addProfile.token);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
-    <div className="card">
-      <div className="cardHeader">Registration</div>
-      <div className="cardBody">
-        <div className="inputGroup">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Oh Snap Team"
-            ref={nameRef}
-          />
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <div className="card-body">
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  className="form-input"
+                  placeholder="Your username"
+                  name="name"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                <button
+                  className="btn btn-block btn-info"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
+
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
+          </div>
         </div>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="abc@example.com"
-          ref={emailRef}
-        />
       </div>
-      <div className="inputGroup">
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Your Password"
-          ref={passwordRef}
-        />
-      </div>
-      <button onClick={registerUser}>Register</button>
-      <p>Your Mentor Await You! </p>
-    </div>
+    </main>
   );
 };
 
