@@ -1,25 +1,29 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+
 // import "../chatroom/chatroom";
 // import "../../"
 
-const ChatroomPage = ({ match, socket }) => {
-  const chatroomId = match.params.id;
-  const [messages, setMessages] = React.useState([]);
-  const messageRef = React.useRef();
-  const [userId, setUserId] = React.useState("");
+function ChatroomPage() {
+  const [socket, setSocket] = React.useState(null);
 
-  const sendMessage = () => {
-    if (socket) {
-      socket.emit("chatroomMessage", {
-        chatroomId,
-        message: messageRef.current.value,
-      });
-
-      messageRef.current.value = "";
-    }
-  };
+  const ChatroomPage = ({ match, socket }) => {
+    const chatroomId = match.params.id;
+    const [messages, setMessages] = React.useState([]);
+    const messageRef = React.useRef();
+    const [userId, setUserId] = React.useState("");
+  
+    const sendMessage = () => {
+      if (socket) {
+        socket.emit("chatroomMessage", {
+          chatroomId,
+          message: messageRef.current.value,
+        });
+  
+        messageRef.current.value = "";
+      }
+    };  
 
   React.useEffect(() => {
     const token = localStorage.getItem("CC_Token");
@@ -90,6 +94,6 @@ const ChatroomPage = ({ match, socket }) => {
       </div>
     </div>
   );
-};
+}};
 
 export default withRouter(ChatroomPage);

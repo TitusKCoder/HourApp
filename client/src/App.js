@@ -20,8 +20,8 @@ import RegisterPage from "./components/pages/RegisterPage";
 import DashboardPage from "./components/pages/DahboardPage/DashboardPage";
 import IndexPage from "./components/pages/IndexPage";
 import ChatroomPage from "./components/pages/chatroom/ChatroomPage";
-// import io from "socket.io-client";
-// import makeToast from "./Toaster";
+import io from "socket.io-client";
+import makeToast from "./Toaster";
 
 
 const httpLink = createHttpLink({
@@ -45,7 +45,35 @@ const client = new ApolloClient({
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const [socket, setSocket] = React.useState(null);
 
+  const setupSocket = () => {
+    const token = localStorage.getItem("CC_Token");
+    if (token && !socket) {
+      const newSocket = io("http://localhost:8000", {
+        query: {
+          token: localStorage.getItem("CC_Token"),
+        },
+      });
+
+      newSocket.on("disconnect", () => {
+        setSocket(null);
+        setTimeout(setupSocket, 3000);
+        makeToast("error", "Socket Disconnected!");
+      });
+
+      newSocket.on("connect", () => {
+        makeToast("success", "Socket Connected!");
+      });
+
+      setSocket(newSocket);
+    }
+  };
+
+  React.useEffect(() => {
+    setupSocket();
+    //eslint-disable-next-line
+  }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);

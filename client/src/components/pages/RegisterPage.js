@@ -3,6 +3,8 @@ import axios from "axios";
 import makeToast from "../../Toaster";
 import "../../styles/common.css"
 
+// import "../../../src/style.css";
+// import "../../../src/App.css";
 const RegisterPage = (props) => {
   const nameRef = React.createRef();
   const emailRef = React.createRef();
