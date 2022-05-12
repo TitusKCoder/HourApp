@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
 import makeToast from "../../Toaster";
-import "../../styles/common.css"
+
+//take out, homepsage is back to normal 
+// import "../../styles/common.css"
 
 // import "../../../src/style.css";
 // import "../../../src/App.css";
