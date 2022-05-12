@@ -1,6 +1,7 @@
 /*
   Catch Errors Handler
-*/
+*///for socket 
+
 
 exports.catchErrors = (fn) => {
     return function (req, res, next) {

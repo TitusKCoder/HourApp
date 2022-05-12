@@ -1,3 +1,6 @@
+
+//for socket.js 
+
 const mongoose = require("mongoose");
 
 const chatroomSchema = new mongoose.Schema({

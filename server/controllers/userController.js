@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+//for socket 
+
 const User = mongoose.model("User");
 const sha256 = require("js-sha256");
 const jwt = require("jwt-then");

@@ -50,6 +50,8 @@ function SocialMedia() {
         </a>
       </li>
     </ul>
+    
+    
   );
 }
 export default SocialMedia;

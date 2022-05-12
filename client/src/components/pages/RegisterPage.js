@@ -73,6 +73,7 @@ const RegisterPage = (props) => {
         />
       </div>
       <button onClick={registerUser}>Register</button>
+      <p>Your Mentor Await You! </p>
     </div>
   );
 };

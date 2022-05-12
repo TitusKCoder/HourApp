@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+//for socket 
+
 const Chatroom = mongoose.model("Chatroom");
 
 exports.createChatroom = async (req, res) => {
