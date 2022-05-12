@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import makeToast from "../../Toaster";
 
-//take out, homepsage is back to normal 
+//take out, homepsage is back to normal and register is mess up
 // import "../../styles/common.css"
 
 // import "../../../src/style.css";

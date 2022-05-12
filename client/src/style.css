@@ -1,5 +1,5 @@
 html {
-  --imp-text-color: #414141;
+  --imp-text-color: #091E05;
 }
 
 .purple {
@@ -60,7 +60,7 @@ html {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(178, 121, 216, 0.959);
+  background: #A4C2A5;
   border-radius: 12px;
 }
 
@@ -85,7 +85,7 @@ html {
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
-  background-color: #343e47;
+  background-color: #091E05;
 }
 
 .navbar-toggler {
@@ -288,7 +288,7 @@ html {
 }
 
 .main-name {
-  color: #414141;
+  color: #004F2D;
 }
 
 .Typewriter__wrapper {
@@ -470,8 +470,8 @@ html {
 }
 
 .project-card-view {
-  box-shadow: 0 4px 5px 3px #343e47 !important;
-  color: #414141 !important;
+  box-shadow: 0 4px 5px 3px #091E05 !important;
+  color: #091E05 !important;
   background-color: transparent !important;
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
@@ -542,7 +542,7 @@ html {
   box-shadow: none !important;
 }
 .project-heading {
-  color: #414141 !important;
+  color: #004F2D !important;
   font-size: 2.3em !important;
   font-weight: 500 !important;
   padding-top: 10px !important;
@@ -553,7 +553,7 @@ html {
 /* About */
 /* --------- */
 
-.about-section {
+/* .about-section {
   position: relative !important;
   padding-top: 100px !important;
   padding-bottom: 30px !important;
@@ -608,7 +608,7 @@ html {
   .about-img {
     padding-top: 0 !important;
   }
-}
+} */
 
 
 .resume-section {
