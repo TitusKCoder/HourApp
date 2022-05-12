@@ -6,8 +6,9 @@ const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const {authMiddleware} = require('./utils/auth');
 var cookieParser = require('cookie-parser');
-const chatRoute = require('./routes/chatroom');
-const userRoute = require('./routes/user');
+
+// const chatRoute = require('./routes/chatroom');
+// const userRoute = require('./routes/user');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./schemas/config/connection');
@@ -30,8 +31,9 @@ app.set('view engine','ejs')
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
-app.use('/routes/chatroom', chatRoute);
-app.use('/routes/user', userRoute);
+
+// app.use('/routes/chatroom', chatRoute);
+// app.use('/routes/user', userRoute);
 // socketioService(httpServer);
 
 if (process.env.NODE_ENV === 'production') {
