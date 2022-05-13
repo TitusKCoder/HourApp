@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Techstack from "./Techstack";
-import Aboutcard from "./AboutCard";
+import ProfileCard from "./ProfileCard";
 import developer from "../../Assets/developer.jpg";
 import { SKILLS, TOOLS } from "../../Constants";
 
-function About() {
+export default function Profile() {
   return (
     <Container fluid className="about-section">
       <Container>
@@ -21,7 +21,7 @@ function About() {
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
               <strong className="purple">HOUR APP</strong>
             </h1>
-            <Aboutcard />
+            <ProfileCard />
           </Col>
           <Col md={5} style={{ paddingBottom: "50px" }} className="about-img">
             <img src={developer} alt="about" className="image-style" />
@@ -56,4 +56,4 @@ function About() {
   );
 }
 
-export default About;
+

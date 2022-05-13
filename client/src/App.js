@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
-import About from "./components/About/About";
+import Me from "./components/Profile/Profile";
 import Login from "./components/Security/Login";
 import Signup from "./components/Security/Signup";
 import Projects from "./components/Projects/Projects";
 import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";
-import Chat from "./layout/Chat/Chat"
+import Chat from "./components/Chat/Chat"
 
 import searchProfile from "./components/SearchProfile";
 
@@ -21,7 +21,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink,} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 
@@ -43,6 +43,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -66,7 +67,6 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/project" component={Projects} />
-            <Route path="/about" component={About} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/profiles/:profileId" component={Profile} />
