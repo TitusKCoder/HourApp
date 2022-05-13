@@ -4,6 +4,7 @@ import MainImg from "../../Assets/mainPic.png";
 import Projects from "../Projects/Projects";
 import SocialMedia from "../SocialMedia";
 import TypeWriter from "./TypeWriter";
+import NewProject from "../../components/newpro/newprojects"
 
 function Home() {
   return (
@@ -33,6 +34,7 @@ function Home() {
               <h1>Grow, Learn and Connect</h1>
               <SocialMedia />
               <Projects />
+              <NewProject />
 
             </Col>
           </Row>

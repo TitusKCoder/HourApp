@@ -38,6 +38,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+//front-end instance for Apollo
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   url: '/graphql',

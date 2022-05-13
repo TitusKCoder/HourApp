@@ -83,18 +83,18 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #2d1950;
+  background: #004f2d;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(178, 121, 216, 0.959);
+  background: #a4c2a5;
   border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(222, 130, 235, 0.911);
+  background: #a4c2a5;
   border-radius: 12px;
 }
 
@@ -102,7 +102,7 @@ html {
 /* Navbar Section  */
 /* --------- */
 .sticky {
-  background-color: #212038d8 !important;
+  background-color: #091e05 !important;
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
@@ -293,7 +293,7 @@ html {
 
 .home-content {
   padding: 3rem 0 0rem !important;
-  color: #414141;
+  color: #004f2d;
   text-align: left;
 }
 
@@ -392,7 +392,7 @@ html {
   text-align: center !important;
   font-size: 1.2em !important;
   line-height: 2em !important;
-  background: #343e47 !important;
+  background: #004f2d !important;
   border-radius: 50% !important;
   transition: 0.5s !important;
   border: 1px solid #343e47;
@@ -498,7 +498,7 @@ html {
 }
 
 .project-card-view {
-  box-shadow: 0 4px 5px 3px #343e47;
+  box-shadow: 0 4px 5px 3px #004f2d;
   color: #414141;
   background-color: transparent;
   opacity: 0.9;
@@ -541,7 +541,7 @@ html {
 .blog-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 3px 3px 5px rgba(155, 88, 173, 0.65) !important;
+  box-shadow: 0 3px 3px 5px #004f2d !important;
 }
 
 /* .card-img-top {
@@ -558,14 +558,14 @@ html {
 
 .btn-primary {
   color: #fff !important;
-  background-color: #623686 !important;
-  border-color: #623686 !important;
+  background-color: #a4c2a5 !important;
+  border-color: #a4c2a5 !important;
 }
 
 .btn-primary:hover {
   color: #fff !important;
-  background-color: #6d20c5d7 !important;
-  border-color: #6d20c5d7 !important;
+  background-color: #a4c2a5 !important;
+  border-color: #a4c2a5 !important;
 }
 .btn:focus {
   outline: none !important;
@@ -721,7 +721,7 @@ html {
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #8a49a8;
+  border: 2px solid #a4c2a5;
 }
 
 .like-item {
@@ -741,8 +741,8 @@ html {
 
 .like-btn:hover {
   transform: translateY(-2px) !important;
-  background-color: #a24dd386 !important;
-  border-color: #a24dd386 !important;
+  background-color: #a4c2a5 !important;
+  border-color: #a4c2a5 !important;
 }
 
 .animate-like {
@@ -818,19 +818,19 @@ html {
 }
 .profile-pic {
   border-radius: 50%;
-  height: 70%;
-  width: 65%;
+  height: 100%;
+  width: 100%;
   margin-top: 12%;
   margin-left: 25%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .profile-pic {
     border-radius: 50%;
     height: 80%;
     width: 50%;
-    margin-top: 12%;
-    margin-left: 25%;
+    margin-top: 20%;
+    margin-left: 50%;
   }
 }
 
