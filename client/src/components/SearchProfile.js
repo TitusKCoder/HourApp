@@ -1,53 +1,60 @@
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import ProjectCard from "./Projects/ProjectCards";
+import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
+import { useQuery } from '@apollo/client';
+import { QUERY_PROFILES } from '../utils/queries';
 
-import React from 'react';
-import { useState } from "react";
-import {useQuery} from '@apollo/client';
-import { QUERY_PROFILES } from './../utils/queries';
+function SearchProfiles() {
+    const { data, loading, error } = useQuery(QUERY_PROFILES);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    if (loading) return <h1>Loading...</h1>;
+    if (error) return <h1>An error occurred</h1>;
+
+    return (
+        <Container fluid className="project-section">
+            {Auth.loggedIn() ? (
+                <Container>
+                    <h1 className="project-heading">
+                        Search <strong className="purple">Mentors </strong>
+                    </h1>
+                    <p style={{ color: "Black" }}>
+                        Want to Learn Something New?
+                    </p>
+
+                    <input type="text" placeholder="search..." onChange={event => setSearchTerm(event.target.value)} />
+
+                    <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+                        {data.profiles.filter((val) => {
+                        if (searchTerm === '') {
+                            return val;
+                        } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            return val;
+                        }
+                    }).map((project, index) => (
+                            <Col md={4} className="project-card" key={index}>
+                                <ProjectCard
+                                    {...project}
+                                    isBlog={false}
+                                />
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            ) : (
+                <p>
+                    You need to be logged in to view mentors. Please{' '}
+                    <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+                </p>
+            )}
 
 
-export default function Profiles() {
- 
 
-  const { loading, data } = useQuery(QUERY_PROFILES)
-  const [searchTerm, setSearchTerm] = useState("")
-  console.log({ loading });
-  if (loading) return "Loading...";
-  return (
-    <main>
-        <div>
-          <h2><Profiles/></h2>
-        </div>
-         <div>
-           
-            <input type="text" placeholder="search..." onChange={event => setSearchTerm(event.target.value)} />
+        </Container>
+    );
+}
 
-            {
-              data.filter(val => {
-                if (searchTerm === '') {
-                  return val;
-                } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                  return val;
-                }
-              }).map((val, key) => (
-                <div className="box" key={key}>
-                  <p>{val.name}</p>
-                  <p>{val.email}</p>
-                  {
-                    val.skills && val.skills.map( (val, key) => {
-                      return(
-                        <>
-                        { key ? ','  : '' } { val }
-                        </>
-                      )
-                    })
-                  }
-                </div>
-              ))
-            
-            }
-            
-          </div>
-        
-    </main>
-  );
-};
+export default SearchProfiles;
+

@@ -12,7 +12,6 @@ import Chat from "./components/Chat/Chat"
 
 import searchProfile from "./components/SearchProfile";
 
-// import Rating from "./components/About/Rating";
 import "./App.css";
 
 
@@ -26,7 +25,7 @@ import { setContext } from '@apollo/client/link/context';
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {

@@ -9,6 +9,26 @@ export const QUERY_PROFILES = gql`
       name
       email
       skills
+      links
+    }
+  }
+`;
+
+export const QUERY_SKILLS = gql`
+    query {
+    skills {
+      _id
+      name
+    }
+  }
+`;
+export const GET_PROFILES = gql`
+  query Profiles($profilesInput: profilesInputFilter) {
+    profiles(input: $profilesInput) {
+      id
+      name
+      email
+      skills
     }
   }
 `;

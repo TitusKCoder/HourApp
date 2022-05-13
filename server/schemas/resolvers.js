@@ -47,7 +47,7 @@ const resolvers = {
         throw new AuthenticationError('No profile with this email found!');
       }
 
-      console.log(profile);
+      
 
       const correctPw = await profile.isCorrectPassword (password);
 
