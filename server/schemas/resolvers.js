@@ -8,7 +8,6 @@ const resolvers = {
     profiles: async () => {
       return Profile.find();
     },
-
     profile: async (parent, { profileId }) => {
      const ooo = await Profile.findOne({ _id: profileId }).populate('skills');
      console.log('ooo==>>', ooo);

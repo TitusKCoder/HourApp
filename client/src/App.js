@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import Me from "./components/Profile/Profile";
 import Login from "./components/Security/Login";
-import Signup from "./components/Security/Signup";
+import Signup from "./components/Security/signup";
 import Projects from "./components/Projects/Projects";
 import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";

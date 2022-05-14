@@ -13,7 +13,8 @@ const typeDefs = gql`
     email: String
     links: String
     password: String
-    skills: [Skill]!
+    skills: [String]!
+    bio:String
   }
 
   type Skill {

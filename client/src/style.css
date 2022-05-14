@@ -517,8 +517,8 @@ html {
   background-color: transparent;
   opacity: 0.9;
   transition: all 0.5s ease 0s;
-  width:fit-content;
-  height:fit-content;
+  /* width:fit-content; */
+  height:100%;
 }
 
 .project-card-view:hover {
