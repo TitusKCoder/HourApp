@@ -10,18 +10,10 @@ function ProjectCards(props) {
       <Card.Body>
         <Card.Title style={{fontWeight: "bold"}}>{props.name}</Card.Title>
         <Card.Text style={{fontWeight: "bold"}}>{props.email}</Card.Text>
-        <Card.Text className="purple">Bio: &nbsp;   {props.skills.join(', ')}</Card.Text>
+        <Card.Text className="purple">Interests: &nbsp;   {props.skills.join(', ')}</Card.Text>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        {/* <Button variant="primary" href={props.links} target="_blank"className="download-button">
-        <BiLinkExternal /> &nbsp;
-          {props.links}
-        </Button> */}
-        <Button variant="primary" target="_blank"className="download-button">
-          <BiLinkExternal /> &nbsp;
-          {props.isBlog ? "View Blog" : "Chat"}
-        </Button>
       </Card.Body>
     </Card>
   );

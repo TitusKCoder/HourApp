@@ -81,6 +81,7 @@
 import React from 'react';
 import '../Security/profile.css'
 // Import the `useParams()` hook
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
@@ -91,23 +92,28 @@ import { QUERY_SINGLE_PROFILE } from '../../utils/queries';
 
 const Profile = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { profileId } = useParams();
-
+  //const { profileId } = useParams();
+  //console.log(profileId);
+  const [profileData, setProfileData] = useState({})
   const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
     // pass URL parameter
-    variables: { profileId: profileId },
+    variables: { profileId: localStorage.getItem("uuid") },
   });
 
   const profile = data?.profile || {};
+  //setProfileData(profile)
+  console.log(profile)
 
   if (loading) {
     return <div>Loading...</div>;
   }
   return (
     <div>
-      {/* <h2 className="card-header">
-        {profile.name}'s friends Bio
-      </h2> */}
+      <h2 className="card-header">
+        Name: {profile.name}
+      </h2>
+      <h3 className='card-body'>
+        Interests: {profile.skills.join(",")} </h3>
 
       {profile.skills?.length > 0 && <SkillsList skills={profile.skills} />}
 

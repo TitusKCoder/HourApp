@@ -9,7 +9,6 @@ import Projects from "./components/Projects/Projects";
 import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";
 import Chat from "./components/Chat/Chat"
-import Header from "./components/ProfileHeader"
 
 import searchProfile from "./components/SearchProfile";
 
@@ -26,7 +25,7 @@ import { setContext } from '@apollo/client/link/context';
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -39,10 +38,8 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-//front-end instance for Apollo
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  url: '/graphql',
   cache: new InMemoryCache(),
 });
 
@@ -70,16 +67,11 @@ function App() {
             <Route path="/project" component={Projects} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/profiles/:profileId" component={ Profile } />
+            <Route path="/profiles/:profileId" component={Profile} />
             <Route path="/searchProfile" component={searchProfile} />
             <Route path="/chat" component={Chat} />
-<<<<<<< HEAD
 
           </Switch>
-=======
-         </Switch>
-          <Footer />
->>>>>>> 4ced7822cffaa7ed57a2ff720c3433b67c33e6a4
         </div>
       )}
     </Router>

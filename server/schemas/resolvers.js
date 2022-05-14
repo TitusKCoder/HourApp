@@ -12,11 +12,12 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
-    me: async (parent, args, context) => {
-      if (context.profile) {
-        return Profile.findOne({ _id: context.profile._id });
+    me: async (parent, { profileId }) => {
+      //console.log(context)
+      if (!profileId) {
+        throw new AuthenticationError('You need to be logged in!');
       }
-      throw new AuthenticationError('You need to be logged in!');
+      return Profile.findOne({ _id: profileId });
     },
     messages: async () => {
       return Message.find();

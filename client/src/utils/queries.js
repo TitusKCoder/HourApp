@@ -45,7 +45,7 @@ export const QUERY_PROFILE = gql`
 `;
 
 export const QUERY_ME = gql`
-  query me {
+  query me($profileId: ID!) {
     me {
       _id
       name
