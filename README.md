@@ -5,7 +5,7 @@
 ## Description
 Hello, welcome to Hour! A Social media site where users can create an account and  connect with a mentor and discuss a specific topic through real-time or video chat The app is built using The app will be built with React, GraphQL, MongoDB, Mongoose ODM, and Socket.io.
 ## Deploy link
-https://fast-mesa-69171.herokuapp.com/
+https://secret-badlands-36880.herokuapp.com/
 ## Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
