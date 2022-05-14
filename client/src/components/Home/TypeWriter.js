@@ -6,9 +6,9 @@ function TypeWriter() {
     <Typewriter
       options={{
         strings: [
-          "New To The Tech World?",
-          "Need a Resume Update?",
-          "Just Want To Chat?",
+          "Check out the Timesquare!",
+          "Spend an hour on HourApp!",
+          "Engage in hot topics!",
           "Here To Connect?",
         ],
         autoStart: true,

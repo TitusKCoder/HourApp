@@ -67,7 +67,7 @@ function NavBar() {
                 to="/chat"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument  style={{ marginBottom: "2px" }} /> Chat
+                <CgFileDocument  style={{ marginBottom: "2px" }} /> Timesquare
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -79,10 +79,10 @@ function NavBar() {
                  <AiOutlineSearch
                   style={{ marginBottom: "2px" }}
                 />{" "}
-               Search
+               Search Profiles
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/project"
@@ -91,9 +91,9 @@ function NavBar() {
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
-                Mentors
+                Profiles
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
             {Auth.loggedIn() ? (
             <><Nav.Item>

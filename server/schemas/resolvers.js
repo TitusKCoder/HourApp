@@ -2,12 +2,6 @@
 const { AuthenticationError } = require('apollo-server-express')
 const { Profile, Message } = require('../models');
 const { signToken } = require('../utils/auth');
-const {GooglePubSub} = require('@axelspringer/graphql-google-pubsub');
-const pubsub = new GooglePubSub();
-
-const subscribers = [];
-const onMessageUpdates = (fn) => subscribers.push(fn);
-
 
 const resolvers = {
   Query: {
@@ -19,8 +13,8 @@ const resolvers = {
       return Profile.findOne({ _id: profileId });
     },
     me: async (parent, args, context) => {
-      if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
+      if (context.profile) {
+        return Profile.findOne({ _id: context.profile._id });
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -46,8 +40,6 @@ const resolvers = {
       if (!profile) {
         throw new AuthenticationError('No profile with this email found!');
       }
-
-      
 
       const correctPw = await profile.isCorrectPassword (password);
 
@@ -88,16 +80,6 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
   },
-  Subscription: {
-    messages: {
-      subscribe: (parent,args, {pubsub} ) => {
-        const channel = Math.random().toString(36).slice(2,15);
-        onMessageUpdates(() => pubsub.publish(channel, {messages}));
-        setTimeout(() => pubsub.publish(channel, {messages}), 0)
-        return pubsub.asyncIterator(channel);
-      }
-    }
-  }
 };
 
 module.exports = resolvers;

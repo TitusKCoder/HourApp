@@ -33,9 +33,9 @@ export const GET_PROFILES = gql`
   }
 `;
 
-export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
+export const QUERY_PROFILE = gql`
+  query profile($name: String!) {
+    user(name: $name) {
       _id
       username
       email
@@ -48,8 +48,10 @@ export const QUERY_ME = gql`
   query me {
     me {
       _id
-      username
+      name
       email
+      links
+      password
       skills
       }
     }

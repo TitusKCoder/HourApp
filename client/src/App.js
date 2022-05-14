@@ -25,7 +25,7 @@ import { setContext } from '@apollo/client/link/context';
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -43,9 +43,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, upadateLoad] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -73,10 +72,10 @@ function App() {
             <Route path="/chat" component={Chat} />
 
           </Switch>
-          <Footer />
         </div>
       )}
     </Router>
+    <Footer/>
     </ApolloProvider>
   );
 }

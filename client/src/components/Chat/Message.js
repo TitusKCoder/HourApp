@@ -1,8 +1,6 @@
 import React from "react";
 import { useQuery, gql } from '@apollo/client';
 
-
-
 const GET_MESSAGES = gql`
 query {
   messages {
@@ -14,7 +12,7 @@ query {
 `
 
 export default function Message ({profileName}) {
-    const {data} = useQuery(GET_MESSAGES, {pollInterval: 500});
+    const {data} = useQuery(GET_MESSAGES, {pollInterval: 1000});
     if (!data){
         return null;
     }
@@ -34,7 +32,7 @@ export default function Message ({profileName}) {
                         height: 50,
                         width: 50,
                         marginRight: '0.5em',
-                        border: '4px solid #black',
+                        border: '1px solid #091E05',
                         borderRadius: 25,
                         textAlign: 'center',
                         fontSize: '18pt',
@@ -46,8 +44,8 @@ export default function Message ({profileName}) {
             )}
             <div
                 style={{
-                    background: profileName === messageUser ? "#58bf56" : "#e5e6ea",
-                    color: profileName === messageUser ? "white" : "black",
+                    background: profileName === messageUser ? "#D8DAD3" : "#004F2D",
+                    color: profileName === messageUser ? "black" : "white",
                     padding: '1em',
                     borderRadius: "1em",
                     maxWidth: "60%",

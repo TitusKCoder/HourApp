@@ -441,7 +441,10 @@ html {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: #a4c2a5;
+  background-color: #90c091;
+  box-shadow:  0 -10px 10px -10px black;
+  width: 100%;
+  position: fixed;
   bottom: 0 !important;
 }
 .footer-copywright {

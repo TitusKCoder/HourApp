@@ -45,7 +45,7 @@ function SearchProfiles() {
                 </Container>
             ) : (
                 <p>
-                    You need to be logged in to view mentors. Please{' '}
+                    You need to be logged in to view and search Profiles. Please{' '}
                     <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
                 </p>
             )}
