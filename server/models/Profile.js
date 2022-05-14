@@ -14,25 +14,11 @@ const profileSchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, 'Please enter a valid email address']
   },
-  links: {
-    type: String,
-    trim: true
-  },
   password: {
     type: String,
     required: true,
     minlength: 5,
   },
-/*  skills: [
-    {
-      type: String,
-      trim: true,
-    },
-
-  ],
-  bio:{
-    type: String
-  }
 });
 
 // set up pre-save middleware to create password

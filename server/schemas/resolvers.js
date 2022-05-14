@@ -8,14 +8,6 @@ const resolvers = {
     profiles: async () => {
       return Profile.find();
     },
-    profile: async (parent, { profileId }) => {
-     const ooo = await Profile.findOne({ _id: profileId }).populate('skills');
-     console.log('ooo==>>', ooo);
-
-
-
-     
-    },
     me: async (parent, { profileId }) => {
       //console.log(context)
       if (!profileId) {
@@ -51,42 +43,10 @@ const resolvers = {
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
       }
-
       const token = signToken(profile);
       return { token, profile };
     },
-    
-    addSkill: async (parent, { profileId, skill }, context) => {
-      if (context.user) {
-        return Skill.create({ profileId, name: skill});
-        /*return Profile.findOneAndUpdate(
-          { _id: profileId },
-          {
-            $addToSet: { skills: skill },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );*/
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    removeProfile: async (parent, { profileId }) => {
-      return Profile.findOneAndDelete({ _id: profileId });
-    },
-    removeSkill: async (parent, { skillId }, context) => {
-      return Skill.findOneAndDelete({ _id: skillId});
-      /*if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { skills: skill } },
-          { new: true }
-        );
-      }*/
-      throw new AuthenticationError('You need to be logged in!');
-    },
-  },
+  } 
 };
 
 module.exports = resolvers;
