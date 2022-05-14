@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import MainImg from "../../Assets/mainPic.png";
-import Projects from "../Projects/Projects";
-import SocialMedia from "../SocialMedia";
 import TypeWriter from "./TypeWriter";
+// import NewProject from "../../components/newpro/newprojects"
+import Maintwo from "../../Assets/Projects/mainEnd.png";
+
 
 function Home() {
   return (
@@ -30,10 +31,10 @@ function Home() {
         <Container>
           <Row>
             <Col md={12} className="home-about-social">
-              <h1>Grow, Learn and Connect</h1>
-              <SocialMedia />
-              <Projects />
-
+              <h1>Chat, Engage, Connect </h1>            
+              <Col md={5}>
+              <img src={Maintwo} className="home-pic" alt="avatar" />
+            </Col>
             </Col>
           </Row>
         </Container>

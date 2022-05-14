@@ -12,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@axelspringer/graphql-google-pubsub": "^2.1.0",
+    "@graphql-tools/schema": "^8.3.11",
+    "apollo-server-core": "^3.7.0",
     "apollo-server-express": "^3.6.2",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
@@ -22,9 +25,13 @@
     "ejs": "^3.1.7",
     "express": "^4.17.2",
     "graphql": "^16.3.0",
+    "graphql-ws": "^5.8.2",
+    "graphql-yoga": "^2.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.0",
-    "socket.io": "^4.5.0"
+    "pubsub": "^3.2.1",
+    "socket.io": "^4.5.0",
+    "ws": "^8.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

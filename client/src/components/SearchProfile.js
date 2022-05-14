@@ -18,7 +18,7 @@ function SearchProfiles() {
             {Auth.loggedIn() ? (
                 <Container>
                     <h1 className="project-heading">
-                        Search <strong className="purple">Mentors </strong>
+                        Search <strong className="purple">People </strong>
                     </h1>
                     <p style={{ color: "Black" }}>
                         Want to Learn Something New?
@@ -45,7 +45,7 @@ function SearchProfiles() {
                 </Container>
             ) : (
                 <p>
-                    You need to be logged in to view mentors. Please{' '}
+                    You need to be logged in to view and search Profiles. Please{' '}
                     <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
                 </p>
             )}

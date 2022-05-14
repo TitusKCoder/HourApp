@@ -9,7 +9,7 @@ export const QUERY_PROFILES = gql`
       name
       email
       skills
-      links
+      bio
     }
   }
 `;
@@ -29,27 +29,31 @@ export const GET_PROFILES = gql`
       name
       email
       skills
+      bio
     }
   }
 `;
 
-export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
+export const QUERY_PROFILE = gql`
+  query profile($name: String!) {
+    user(name: $name) {
       _id
       username
       email
       skills
+      bio
     }
   }
 `;
 
 export const QUERY_ME = gql`
-  query me {
+  query me($profileId: ID!) {
     me {
       _id
-      username
+      name
       email
+      links
+      password
       skills
       }
     }
