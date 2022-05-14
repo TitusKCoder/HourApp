@@ -24,7 +24,7 @@ const SkillForm = ({ profileId }) => {
 
   return (
     <div>
-      <h4> What Skills Do You Bring To the Hour Community? </h4>
+      <h4> What Interests Do You Bring To the Hour Community? </h4>
       <form
         className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
@@ -40,7 +40,7 @@ const SkillForm = ({ profileId }) => {
 
         <div className="col-12 col-lg-3">
           <button className="btn btn-info btn-block py-3" type="submit">
-            What Skills do you have?
+            Add Interest
           </button>
         </div>
         {error && (

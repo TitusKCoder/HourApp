@@ -23,12 +23,12 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  skills: [
+/*  skills: [
     {
       type: String,
       trim: true,
     },
-  ],
+  ],*/
 });
 
 // set up pre-save middleware to create password

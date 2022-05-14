@@ -13,12 +13,13 @@ const typeDefs = gql`
     email: String
     links: String
     password: String
-    skills: [String]!
+    skills: [Skill]!
   }
 
   type Skill {
     _id: ID
     name: String
+    profileId: ID
   }
 
   type Auth {
@@ -45,9 +46,9 @@ const typeDefs = gql`
     postMessage(profileName: String!, text: String!): Message
     login(email:String!, password: String!): Auth
     addProfile(name: String!, email: String!, password: String!): Auth
-    addSkill(profileId: ID!, skill: String!): Profile
+    addSkill(profileId: ID!, name: String!): Skill
     removeProfile(profileId: ID!): Profile
-    removeSkill(profileId: ID!, skill: String!): Profile
+    removeSkill(profileId: ID!, skillId: ID!): Profile
   }
 
   type Subscription {

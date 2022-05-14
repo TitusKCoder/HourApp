@@ -1,6 +1,6 @@
 
 const { AuthenticationError } = require('apollo-server-express')
-const { Profile, Message } = require('../models');
+const { Profile, Message, Skill } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -10,7 +10,12 @@ const resolvers = {
     },
 
     profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId });
+     const ooo = await Profile.findOne({ _id: profileId }).populate('skills');
+     console.log('ooo==>>', ooo);
+
+
+
+     
     },
     me: async (parent, { profileId }) => {
       //console.log(context)
@@ -54,7 +59,8 @@ const resolvers = {
     
     addSkill: async (parent, { profileId, skill }, context) => {
       if (context.user) {
-        return Profile.findOneAndUpdate(
+        return Skill.create({ profileId, name: skill});
+        /*return Profile.findOneAndUpdate(
           { _id: profileId },
           {
             $addToSet: { skills: skill },
@@ -63,21 +69,22 @@ const resolvers = {
             new: true,
             runValidators: true,
           }
-        );
+        );*/
       }
       throw new AuthenticationError('You need to be logged in!');
     },
     removeProfile: async (parent, { profileId }) => {
       return Profile.findOneAndDelete({ _id: profileId });
     },
-    removeSkill: async (parent, { skill }, context) => {
-      if (context.user) {
+    removeSkill: async (parent, { skillId }, context) => {
+      return Skill.findOneAndDelete({ _id: skillId});
+      /*if (context.user) {
         return Profile.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: { skills: skill } },
           { new: true }
         );
-      }
+      }*/
       throw new AuthenticationError('You need to be logged in!');
     },
   },
