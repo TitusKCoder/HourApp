@@ -40,9 +40,6 @@ if (error) return <h1>An error occurred</h1>;
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
-
-
-
     </Container>
   );
 }

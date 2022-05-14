@@ -2,6 +2,9 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import MainImg from "../../Assets/mainPic.png";
 import TypeWriter from "./TypeWriter";
+// import NewProject from "../../components/newpro/newprojects"
+import Maintwo from "../../Assets/Projects/mainEnd.png";
+
 
 function Home() {
   return (
@@ -28,7 +31,10 @@ function Home() {
         <Container>
           <Row>
             <Col md={12} className="home-about-social">
-              <h1>Chat, Engage, Connect </h1>
+              <h1>Chat, Engage, Connect </h1>            
+              <Col md={5}>
+              <img src={Maintwo} className="home-pic" alt="avatar" />
+            </Col>
             </Col>
           </Row>
         </Container>
