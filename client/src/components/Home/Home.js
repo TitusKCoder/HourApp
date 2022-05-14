@@ -40,8 +40,8 @@ function Home() {
               <Col md={5}>
               <img src={Maintwo} className="home-pic" alt="avatar" />
             </Col>
-            <SocialMedia />
-              <Projects />
+            {/* <SocialMedia /> */}
+              {/* <Projects /> */}
              
             </Col>
           </Row>

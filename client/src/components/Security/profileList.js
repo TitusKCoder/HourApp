@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProfileList = ({ profiles, title }) => {
   if (!profiles.length) {
@@ -21,6 +22,14 @@ const ProfileList = ({ profiles, title }) => {
                     {profile.skills && profile.skills.length === 1 ? '' : 's'}
                   </span>
                 </h4>
+                {/* Use <Link> component to create an internal hyperlink reference. Use `to` prop to set the path instead of `href` */}
+                <Link
+                  className="btn btn-block btn-squared btn-light text-dark"
+                  to={`/profiles/${profile._id}`}
+                >
+                  View and endorse their skills.
+                </Link>
+
               </div>
             </div>
           ))}

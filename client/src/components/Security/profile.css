@@ -1154,7 +1154,7 @@
   }
   
   form .form-input.form-input-squared {
-    border-radius: 0;
+    border-radius: 1;
   }
   
   form [type='checkbox'],
