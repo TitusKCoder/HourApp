@@ -12,7 +12,7 @@ function AboutCard() {
             Wecome To <span className="purple">Hour </span>
             Meet <span className="purple"> Mentors</span>
             <br />
-           Skills
+           Interests
             <br />
            Bio
             <br />
