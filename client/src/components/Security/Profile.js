@@ -79,7 +79,7 @@
 //show single a profile
 
 import React from 'react';
-
+import '../Security/profile.css'
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';

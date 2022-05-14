@@ -9,6 +9,7 @@ import Projects from "./components/Projects/Projects";
 import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";
 import Chat from "./layout/Chat/Chat";
+import Header from "./components/ProfileHeader"
 
 import searchProfile from "./components/SearchProfile";
 
@@ -70,11 +71,10 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/profiles/:profileId" component={Profile} />
+            <Route path="/profiles/:profileId" component={ Profile } />
             <Route path="/searchProfile" component={searchProfile} />
             <Route path="/chat" component={Chat} />
-
-          </Switch>
+         </Switch>
           <Footer />
         </div>
       )}
