@@ -9,7 +9,7 @@ export const QUERY_PROFILES = gql`
       name
       email
       skills
-      links
+      bio
     }
   }
 `;
@@ -29,6 +29,7 @@ export const GET_PROFILES = gql`
       name
       email
       skills
+      bio
     }
   }
 `;
@@ -40,6 +41,7 @@ export const QUERY_USER = gql`
       username
       email
       skills
+      bio
     }
   }
 `;

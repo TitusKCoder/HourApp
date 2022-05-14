@@ -28,7 +28,11 @@ const profileSchema = new Schema({
       type: String,
       trim: true,
     },
+
   ],
+  bio:{
+    type: String
+  }
 });
 
 // set up pre-save middleware to create password

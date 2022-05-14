@@ -8,10 +8,7 @@ export default function MentorCards(props) {
     <Card className="project-card-view">
       <Card.Body>
         <Card.Title style={{fontWeight: "bold"}}>{props.name}</Card.Title>
-        <Card.Text className="purple">Skills: &nbsp; {props.skills}</Card.Text>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
+        <Card.Text style={{ textAlign: "justify" }} className="purple">Bio:{props.bio}</Card.Text>
         <Button href={props.link} target="_blank"className="download-button">
           <BiLinkExternal /> &nbsp;
           {props.isBlog ? "View Blog" : "Chat"}
