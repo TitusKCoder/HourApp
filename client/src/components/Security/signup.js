@@ -34,10 +34,9 @@ const Signup = () => {
       const { data } = await addProfile({
         variables: { ...formState },
       })
-      // localStorage.setItem("uuid", data.login.profile._id)
+      localStorage.setItem("uuid", data.addProfile.profile._id)
+      
       console.log('data', data.addProfile)
-
-
 
       Auth.login(data.addProfile.token);
 
