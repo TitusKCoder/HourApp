@@ -1,9 +1,9 @@
 import {React, useState} from "react";
-import {Container, Row, Col, FormControl, FormGroup, Button, Input} from "react-bootstrap";
+import {Container, Row, Col, Button} from "react-bootstrap";
 import Message from "./Message";
 import { useMutation, gql } from "@apollo/client";
 import { useQuery } from '@apollo/client';
-import {QUERY_ME} from '../../utils/queries';
+import { QUERY_PROFILE} from '../../utils/queries';
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,9 @@ mutation($profileName: String!, $text: String!) {
   }`
 
   export default function Chat () {
-    const {data, loading, error} = useQuery(QUERY_ME);
+    const userID = localStorage.getItem('uuid');
+    console.log('userID', userID);
+    const {data, loading, error} = useQuery(QUERY_PROFILE, {variables: {userID}});
     const [state, setState] = useState({
         profileName: '',
         text: '',
@@ -53,11 +55,11 @@ mutation($profileName: String!, $text: String!) {
                     }}>
                     <Row>
                         <Col xs={2} style={{padding: 0}}>
-                            {console.log('inred==>>', data?.me?.name)}
+                            {console.log('iNNnred==>>', data)}
                             <input
                             label="Name"
-                            disabled={data?.me?.name}
-                            value={state.profileName || data?.me?.name}
+                            disabled={data?.profile?.name}
+                            value={state.profileName || data?.profile?.name}
                             onChange= {(e) => setState({
                                 ...state,
                                 profileName: e.target.value,

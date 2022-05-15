@@ -57,4 +57,3 @@ function SearchProfiles() {
 }
 
 export default SearchProfiles;
-

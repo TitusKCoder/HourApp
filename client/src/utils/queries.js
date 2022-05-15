@@ -12,6 +12,16 @@ export const QUERY_PROFILES = gql`
   }
 `;
 
+export const QUERY_PROFILE = gql`
+  query profile($userID: ID!) {
+    profile (profileId: $userID){
+      _id
+      name
+      email
+    }
+  }
+`;
+
 export const QUERY_ME = gql`
   query me($profileId: ID!) {
     me {

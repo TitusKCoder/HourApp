@@ -11,7 +11,6 @@ const typeDefs = gql`
     _id: ID!
     name: String
     email: String
-    links: String
     password: String
   }
 
@@ -22,6 +21,7 @@ const typeDefs = gql`
 
   type Query {
     profiles: [Profile]!
+    profile(profileId: ID!): Profile
   }
 
   type Query {
