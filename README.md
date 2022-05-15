@@ -31,6 +31,8 @@ Titus Knox (TitusKCoder) | Radhika B. (vakrathundaya)| Genevie Giko (Geneviealba
 
 # Sreenshot 
 
+![image](https://user-images.githubusercontent.com/94375676/168457237-4f90a332-f738-4eac-9e64-0c656b9e509a.png)
+
 
 # Questions
 If you have any questions about the repo or an issue you can contact us directly by email.
