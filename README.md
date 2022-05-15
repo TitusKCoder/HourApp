@@ -3,7 +3,7 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Hello, welcome to Hour! A Social media site where users can create an account and  connect with people and discuss topics through real-time. The app will be built with React, GraphQL, Express, Apollo Server, MongoDB, Mongoose ODM, Bcrypt, websockets
+Hello, welcome to Hour! A Social media site where users can create an account and  connect with people and discuss topics through real-time. The app will be built with React, GraphQL, Express, Apollo Server, MongoDB, Mongoose ODM, Bcrypt, and Websockets.
 
 ## Deploy link
 
