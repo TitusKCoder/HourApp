@@ -9,7 +9,6 @@ function newCards(props) {
       <Card.Img variant="top" src={props.imgPath} alt="card-img" />
       <Card.Body>
         <Card.Title style={{fontWeight: "bold"}}>{props.title}</Card.Title>
-        <Card.Text className="purple">Skill: {props.technologyUsed}</Card.Text>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>

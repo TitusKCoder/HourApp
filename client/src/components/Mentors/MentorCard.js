@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import { BiLinkExternal } from "react-icons/bi";
 
 export default function MentorCards(props) {
@@ -8,11 +7,11 @@ export default function MentorCards(props) {
     <Card className="project-card-view">
       <Card.Body>
         <Card.Title style={{fontWeight: "bold"}}>{props.name}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }} className="purple">Bio:&nbsp;{props.bio}</Card.Text>
-        <Button href={props.link} target="_blank"className="download-button">
-          <BiLinkExternal /> &nbsp;
-          {props.isBlog ? "View Blog" : "Chat"}
-        </Button>
+        <Card.Text className="purple">Interests: &nbsp; {props.skills}</Card.Text>
+        <Card.Text style={{ textAlign: "justify" }}>
+          {props.description}
+        </Card.Text>
+
       </Card.Body>
     </Card>
   );

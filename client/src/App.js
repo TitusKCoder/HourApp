@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
-import Me from "./components/Profile/Profile";
 import Login from "./components/Security/Login";
 import Signup from "./components/Security/signup";
 import Projects from "./components/Projects/Projects";
-import Profile from "./components/Security/Profile";
 import Footer from "./components/Footer";
 import Chat from "./components/Chat/Chat"
 
@@ -67,7 +65,6 @@ function App() {
             <Route path="/project" component={Projects} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/profiles/:profileId" component={Profile} />
             <Route path="/searchProfile" component={searchProfile} />
             <Route path="/chat" component={Chat} />
 
