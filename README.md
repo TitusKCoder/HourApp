@@ -32,6 +32,10 @@ Titus Knox (TitusKCoder) | Radhika B. (vakrathundaya)| Genevie Giko (Geneviealba
 # Sreenshot 
 
 ![image](https://user-images.githubusercontent.com/94375676/168457237-4f90a332-f738-4eac-9e64-0c656b9e509a.png)
+![Screen Shot 2022-05-15 at 10 05 39 PM](https://user-images.githubusercontent.com/94097708/168508324-2a6ed39e-b37b-4df6-b16d-2cd41bf2f214.png)
+
+![Screen Shot 2022-05-15 at 10 05 56 PM](https://user-images.githubusercontent.com/94097708/168508330-28900230-304c-45c6-88f0-663a6977f4fc.png)
+
 
 
 # Questions
